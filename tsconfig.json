@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ES6",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "outDir": "./dist", 
+    "rootDir": "./",    
+    "resolveJsonModule": true
+  },
+  "include": ["app.ts", "controller", "model", "router"]
 }
