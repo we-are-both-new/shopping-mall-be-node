@@ -14,10 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // req.body가 객체로 인식이 됨
 app.use("/api", indexRouter);
 
-const mongoURI = process.env.MONGODB_URI || "";
+const mongoURI = process.env.MONGODB_URI as string;
 
 mongoose
-  .connect(mongoURI)
+  .connect(mongoURI, {
+    serverSelectionTimeoutMS: 10000,
+  })
   .then(() => {
     console.log("✅ Connected to DB");
   })
